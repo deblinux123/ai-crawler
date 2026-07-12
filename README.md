@@ -9,7 +9,7 @@ crawl (crawl4ai) → chunk → generate pairs (Ollama, local) → curate (dedupe
 ## Install
 
 ```bash
-git clone <this repo>
+git clone https://github.com/deblinux123/ai-crawler
 cd ai-datacreator
 pip install -e .
 ```
