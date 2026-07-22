@@ -116,9 +116,12 @@ async def crawl_to_chunks(cfg: CrawlConfig) -> list[Chunk]:
 
             for page in page_results:
                 if not getattr(page, "success", True):
+                    err = getattr(page, "error_message", "unknown error")
+                    print(f"Skipped {page.url}: {err}")
                     continue
                 if page.url in seen_urls:
                     continue
+                
                 seen_urls.add(page.url)
 
                 md_obj = page.markdown
